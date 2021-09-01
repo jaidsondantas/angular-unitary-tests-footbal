@@ -1,0 +1,31 @@
+<div class="card-player">
+  <div class="body-card">
+    <div class="score-and-photo">
+      <div class="score">
+        <span>{{player.rating}}</span>
+        <mat-divider class="mt-16"></mat-divider>
+        <span class="mt-16">{{player.position}}</span>
+      </div>
+      <div class="photo">
+        <img src="https://api.sofascore.com/api/v1/player/{{player.id}}/image" alt="">
+      </div>
+    </div>
+    <div class="name">
+      {{player.name}}
+    </div>
+    <div class="statistics mt-8">
+      <div class="column-left mr-8">
+        <span>GOL {{player?.goals | zeroNull}}</span>
+        <span>ASS {{player?.assists | zeroNull}}</span>
+        <span>INT {{player?.interceptions | zeroNull}}</span>
+      </div>
+      <mat-divider vertical></mat-divider>
+      <div class="column-right ml-8">
+        <span>SHU {{player?.totalShots | zeroNull}}</span>
+        <span>PAS {{player?.accuratePasses | zeroNull}}</span>
+        <span>KEY {{player?.keyPasses | zeroNull}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+

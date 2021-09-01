@@ -1,0 +1,73 @@
+app-player-card {
+
+  .card-player {
+    margin-top: 16px;
+    background-image: url("~src/assets/img/card-player.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    height: 293px;
+    width: 193px;
+
+    .body-card {
+      padding: 30px;
+
+      .score-and-photo {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+
+        .score {
+          color: white;
+          font-size: 2rem;
+          font-weight: bold;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          mat-divider {
+            width: 80%;
+            border-top-color: white !important;
+          }
+
+
+        }
+
+        .photo {
+          margin-left: 4px;
+
+          img {
+            height: 80px;
+            border-radius: 75%;
+            border: 3px solid;
+          }
+        }
+      }
+
+      .name {
+        margin-top: 26px;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+      }
+
+      .statistics {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        span {
+          font-weight: 400;
+        }
+      }
+
+      .column-left, .column-right {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

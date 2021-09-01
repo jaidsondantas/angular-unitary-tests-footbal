@@ -1,0 +1,82 @@
+
+@use 'sass:map';
+@use '~@angular/material' as mat;
+@use '~@angular/material/core/theming/palette';
+
+@import 'colors';
+@import 'breakpoints';
+@import 'helpers';
+@import "components";
+@import "general";
+
+@include mat.core();
+
+$custom-typography: mat.define-typography-config(
+  $font-family: 'Fira Code, monospace',
+);
+
+@include mat.core($custom-typography);
+
+//Define palettes colors accents
+$light-primary: mat.define-palette($theme-primary);
+
+
+
+//Define Theme light
+$accent-palette-light: mat.define-palette($mat-light, 500, 100);
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $accent-palette-light,
+    is-dark: false,
+    foreground: $my-light-theme-foreground,
+    background: $my-light-theme-background,
+  ),
+));
+
+
+.light-theme {
+  @include mat.core-color($light-theme);
+  @include mat.all-component-themes($light-theme);
+  @include custom-components-theme($light-theme);
+
+  color: mat.get-color-from-palette($my-light-theme-foreground, 'text') !important;
+  background: $background-light;
+
+  .mat-app-background {
+    background-color: $background-light;
+  }
+
+}
+
+//Define Theme dark
+$accent-palette-dark: mat.define-palette($mat-dark, 500, 100);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $light-primary,
+    accent: $accent-palette-dark,
+    is-dark: true,
+    foreground: $my-dark-theme-foreground,
+    background: $my-dark-theme-background,
+  )
+));
+
+.dark-theme {
+  @include mat.core-color($dark-theme);
+  @include mat.all-component-colors($dark-theme);
+  @include custom-components-theme($dark-theme);
+
+  color: mat.get-color-from-palette($my-dark-theme-foreground, 'text') !important;
+  background: $background-dark;
+
+  .mat-app-background {
+    background-color: $background-dark;
+  }
+
+  .segment-key, .segment-separator, .segment-value {
+    color: mat.get-color-from-palette($my-dark-theme-foreground, 'text') !important;
+  }
+
+}
+

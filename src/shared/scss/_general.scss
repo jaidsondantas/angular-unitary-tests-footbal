@@ -1,0 +1,25 @@
+.custom-scrollbar, .ngx-json-viewer {
+  &::-webkit-scrollbar-track {
+    background: #CCCCCC;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #AAAAAA;
+    border-radius: 20px;
+  }
+}
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 1.2em;
+}
+
+.mat-divider-vertical {
+
+}

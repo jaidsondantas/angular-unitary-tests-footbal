@@ -1,0 +1,5 @@
+@import "components_angular";
+
+@mixin custom-components-theme($theme) {
+  @include components-angular($theme);
+}
